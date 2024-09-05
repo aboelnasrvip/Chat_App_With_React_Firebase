@@ -1,0 +1,81 @@
+.chatlist {
+  flex: 1;
+  overflow: auto;
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+
+    .searchbar {
+      flex: 1;
+      background-color: #11192880;
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Reduce gap between img and input */
+      border-radius: 10px;
+      padding: 8px; /* Adjust padding */
+      height: 40px; /* Set a consistent height for the search bar */
+
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        flex: 1;
+        height: 100%; /* Make input fill the height of its container */
+        padding: 10px; /* Remove default padding */
+        margin: 0;
+        line-height: 1.5; /* Adjust line height for better text alignment */
+      }
+
+      img {
+        width: 24px; /* Adjust width to fit well */
+        height: 24px; /* Set height to match the input */
+        object-fit: contain; /* Keep the aspect ratio of the image */
+      }
+    }
+
+    .add {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(17, 25, 40, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #dddddd35;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    span {
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+}
