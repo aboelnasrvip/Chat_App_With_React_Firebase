@@ -15,29 +15,32 @@ const ChatList = () => {
 
   useEffect(() => {
     // Setting up a real-time listener for user chats
-    const unSub = onSnapshot(doc(db, "userchats", currentUser.id), async (res) => {
-      const data = res.data();
-      if (!data || !data.chats) return;
+    const unSub = onSnapshot(
+      doc(db, "userchats", currentUser.id),
+      async (res) => {
+        const data = res.data();
+        if (!data || !data.chats) return;
 
-      const items = data.chats;
+        const items = data.chats;
 
-      // Fetch user data for each chat
-      const promises = items.map(async (item) => {
-        try {
-          const userDocRef = doc(db, "users", item.receiverId);
-          const userDocSnap = await getDoc(userDocRef);
-          const user = userDocSnap.data();
-          return { ...item, user };
-        } catch (err) {
-          console.error("Error fetching user data:", err);
-          return item;
-        }
-      });
+        // Fetch user data for each chat
+        const promises = items.map(async (item) => {
+          try {
+            const userDocRef = doc(db, "users", item.receiverId);
+            const userDocSnap = await getDoc(userDocRef);
+            const user = userDocSnap.data();
+            return { ...item, user };
+          } catch (err) {
+            console.error("Error fetching user data:", err);
+            return item;
+          }
+        });
 
-      // Wait for all user data to be resolved
-      const chatData = await Promise.all(promises);
-      setChats(chatData.sort((a, b) => b.updatedAt - a.updatedAt));
-    });
+        // Wait for all user data to be resolved
+        const chatData = await Promise.all(promises);
+        setChats(chatData.sort((a, b) => b.updatedAt - a.updatedAt));
+      }
+    );
 
     return () => {
       unSub(); // Clean up the listener on unmount
