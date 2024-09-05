@@ -62,7 +62,7 @@ A real-time chat application developed with React.js and Firebase that offers co
     - Obtain your Firebase configuration and replace the configuration values in the project.
 
 
-4. **Create a Firebase project:**
+4. **Set up environment variables::**
     - Create a **.env** file in the root of your project and add your Firebase configuration:
    ```bash
    VITE_FIREBASE_API_KEY=your_api_key
