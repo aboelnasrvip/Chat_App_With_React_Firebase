@@ -5,10 +5,29 @@
 
 A real-time chat application developed with React.js and Firebase that offers comprehensive messaging and user management features. Users can create accounts, chat with others, and manage their contacts in a secure and intuitive environment.
 
-## Live Demo
 
-[![Demo](./public/thumbnail.png)](https://player.vimeo.com/video/1006747544)
-<!-- https://vimeo.com/1006747544 -->
+## Creat Acount
+![](./public/1.png)
+## Login Page
+![](./public/2.png)
+## Send Imeage & Text & Emoji
+![](./public/3.png)
+![](./public/4.png)
+## The color of the chat changes according to the username of the message sender.
+![](./public/5.png)
+![](./public/6.png)
+## Real time
+![](./public/7.png)
+![](./public/8.png)
+## Add a new user to chat with
+![](./public/9.png)
+![](./public/10.png)
+![](./public/11.png)
+## Block User
+![](./public/12.png)
+
+
+
 ## Features
 
 - **Authentication**: Secure user registration and login using Firebase.
@@ -44,7 +63,7 @@ A real-time chat application developed with React.js and Firebase that offers co
 
 
 4. **Create a Firebase project:**
-- Create a **.env** file in the root of your project and add your Firebase configuration:
+    - Create a **.env** file in the root of your project and add your Firebase configuration:
    ```bash
    VITE_FIREBASE_API_KEY=your_api_key
    VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
